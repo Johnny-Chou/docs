@@ -1,0 +1,16 @@
+cd tools
+curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > repo
+chmod a+x repo
+cd ..
+mkdir android-mirror
+cd android-mirror
+repo init -u https://android.googlesource.com/platform/manifest --mirror
+#repo init -u https://android.googlesource.com/platform/manifest -b refs/tags/android-4.1.1_r1 -m default.xml --mirror
+cd .repo/manifests
+git config remote.origin.url https://android.googlesource.com/platform/manifest
+git fetch
+git checkout refs/tags/android-4.1.1_r1
+gedit default.xml
+change fetch to https://android.googlesource.com
+cd ../..
+repo sync
