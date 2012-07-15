@@ -14,3 +14,17 @@ gedit default.xml
 change fetch to https://android.googlesource.com
 cd ../..
 repo sync
+
+mkdir android-src
+cd android-src
+repo init -u /home/pageask/android-mirror/platform/manifest.git -b refs/tags/android-4.1.1_r1 -m default.xml --repo-url=/home/pageask/android-mirror/repo.git
+repo sync
+
+cd android-src/.repo/manifests
+gedit .git/config&
+git config remote.origin.url /home/pageask/android-mirror/platform/manifest.git
+git fetch
+git checkout refs/tags/android-4.1.1_r1
+cd ../..
+repo sync
+
