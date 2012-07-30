@@ -1,0 +1,4 @@
+uname -r
+ls /boot/ | grep vmlinuz
+dpkg -l | grep 3.0.0-16
+sudo apt-get remove linux-headers-3.0.0-16 linux-headers-3.0.0-16-generic linux-image-3.0.0-16-generic
