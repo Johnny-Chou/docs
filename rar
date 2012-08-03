@@ -1,0 +1,3 @@
+sudo apt-get install rar
+
+rar x filename.rar

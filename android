@@ -1,0 +1,104 @@
+######################################
+Creating an Android Project
+######################################
+
+android list targets
+
+android create project \
+--target 1 \
+--name MyAndroidApp \
+--path ./MyAndroidAppProject \
+--activity MyAndroidAppActivity \
+--package com.example.myandroid
+
+######################################
+Updating a Project
+######################################
+
+android update project --name MyApp --target 2 --path ./MyAppProject
+
+######################################
+Setting up a Library Project
+######################################
+
+android create lib-project --name <your_project_name> \
+--target <target_ID> \
+--path path/to/your/project \
+--package <your_library_package_namespace>
+
+The create lib-project command creates a standard project structure that includes preset property that indicates to the build system that the project is a library. It does this by adding this line to the project's project.properties file:
+android.library=true
+
+If you want to convert an existing application project to a library project, so that other applications can use it, you can do so by adding a the android.library=true property to the application's project.properties file.
+
+######################################
+Creating the manifest file
+######################################
+
+A library project's manifest file must declare all of the shared components that it includes, just as would a standard Android application.
+
+<manifest>
+  ...
+  <application>
+    ...
+    <activity android:name="GameActivity" />
+    ...
+  </application>
+</manifest>
+
+######################################
+Updating a library project
+######################################
+
+android update lib-project \
+--target <target_ID> \
+--path path/to/your/project
+
+######################################
+Referencing a Library Project
+######################################
+
+android update project \
+--target <target_ID> \
+--path path/to/your/project
+--library path/to/library_projectA
+
+This command updates the application project's build properties to include a reference to the library project. Specifically, it adds an android.library.reference.n property to the project's project.properties file. For example:
+
+android.library.reference.1=path/to/library_projectA
+
+If you are adding references to multiple libraries, note that you can set their relative priority (and merge order) by manually editing the project.properties file and adjusting the each reference's .n index as appropriate. For example, assume these references:
+
+android.library.reference.1=path/to/library_projectA
+android.library.reference.2=path/to/library_projectB
+android.library.reference.3=path/to/library_projectC
+
+You can reorder the references to give highest priority to library_projectC in this way:
+
+android.library.reference.2=path/to/library_projectA
+android.library.reference.3=path/to/library_projectB
+android.library.reference.1=path/to/library_projectC
+
+Note that the .n index in the references must begin at "1" and increase uniformly without "holes". References appearing in the index after a hole are ignored.
+
+At build time, the libraries are merged with the application one at a time, starting from the lowest priority to the highest. Note that a library cannot itself reference another library and that, at build time, libraries are not merged with each other before being merged with the application.
+
+######################################
+Declaring library components in the manifest file
+######################################
+
+In the manifest file of the application project, you must add declarations of all components that the application will use that are imported from a library project. For example, you must declare any <activity>, <service>, <receiver>, <provider>, and so on, as well as <permission>, <uses-library>, and similar elements.
+
+Declarations should reference the library components by their fully-qualified package names, where appropriate.
+
+<manifest>
+  ...
+  <application>
+    ...
+    <activity android:name="com.example.android.tictactoe.library.GameActivity" />
+    ...
+  </application>
+</manifest>
+
+ant debug
+ant release
