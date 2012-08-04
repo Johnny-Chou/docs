@@ -7,3 +7,15 @@ dmesg | grep unity
 locate libGL.so.1.2
 Ctrl+Alt+F1
 Alt+F7
+
+glxgears
+lspci | grep VGA
+
+sudo apt-get install sysinfo
+sudo apt-get install nvidia-current
+nvidia-xconfig
+
+sudo add-apt-repository ppa:bumblebee/stable
+ls /etc/apt/sources.list.d/
+sudo apt-get update
+sudo apt-get install bumblebee bumblebee-nvidia
