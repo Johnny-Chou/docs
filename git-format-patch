@@ -1,0 +1,40 @@
+########################################################
+#
+########################################################
+git clone git://github.com/ariejan/imdb.git
+cd imdb
+git checkout -b fix_empty_poster
+
+git log --pretty=oneline -3
+* ce30d1f - (fix_empty_poster) Added poster URL as part of cli output (7 minutes ago)
+* 5998b80 - Added specs to test empty poster URL behaviour (12 minutes ago)
+* aecb8cb - (REL-0.5.0, origin/master, origin/HEAD, master) Prepare release 0.5.0 (4 months ago)
+
+git format-patch master --stdout > fix_empty_poster.patch
+
+git apply --stat fix_empty_poster.patch
+git apply --check fix_empty_poster.patch
+
+git am --signoff < fix_empty_poster.patch 
+Applying: Added specs to test empty poster URL behaviour
+Applying: Added poster URL as part of cli output
+
+git format-patch -k --stdout R1..R2 | git am -3 -k
+
+########################################################
+#
+########################################################
+git clone ssh://me@example.com/repos/origRepo
+cd origRepo
+mkdir /tmp/myPatches
+git format-patch -M -C --output-directory /tmp/myPatches 17fbf896..fb9bea1
+less /tmp/myPatches/0001-DKL-mods-to-theme.patch
+cd /repos/newRepo
+git checkout myBranch
+git checkout -b myBranch-patches
+git am /tmp/myPatches/00*
+git diff --stat myBranch  myBranch-patches
+git difftool myBranch  myBranch-patches
+git checkout myBranch
+git merge myBranch-patches
+
