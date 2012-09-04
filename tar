@@ -2,3 +2,4 @@ tar -jcvf filename.tar.bz2 dir
 tar -zcvf filename.tar.gz dir
 tar -jxvf filename.tar.bz2
 tar -zxvf filename.tar.gz
+tar -xvf zips/emacs-24.1.tar.bz2 -C tools/

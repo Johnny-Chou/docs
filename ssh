@@ -1,0 +1,4 @@
+sudo apt-get install openssh-server
+sudo apt-get install openssh-client
+ssh hzw@192.168.1.100
+scp hzw@192.168.1.100:.ssh/id_rsa.pub ./hzw.pub
