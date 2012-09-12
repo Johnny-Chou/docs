@@ -1,1 +1,4 @@
 sudo usermod -a -G vboxusers pageask
+
+when download software need to do:
+setting -> usb -> usb filter
