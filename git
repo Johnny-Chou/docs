@@ -1,2 +1,7 @@
 git clean -fd
 git checkout .
+
+git checkout --orphan NEWBRANCH
+git rm -rf .
+
+git add -u
