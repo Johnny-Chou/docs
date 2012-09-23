@@ -1,0 +1,1 @@
+find . -name Thumbs.db -exec rm {} \;
