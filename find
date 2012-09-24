@@ -1,1 +1,9 @@
 find . -name Thumbs.db -exec rm {} \;
+
+find . -type d -exec chmod 0755 {} \;
+find . -type f -exec chmod 0664 {} \;
+
+chmod 0755 $(find . -type d)
+
+chmod -R 0700 *
+chmod 0600 $(find . ! -type d)
