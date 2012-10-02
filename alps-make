@@ -1,2 +1,10 @@
 ./mk mm packages/apps/Launcher2 snod
+
 ./mk n dr Mms
+
+./mk n dr framework
+./mk snod
+
+./mk r dr services
+
+./mk r dr android.policy
