@@ -26,3 +26,7 @@ mount -o remount,rw -t ext4 emmc@android /system
 exit
 
 adb push out/target/product/mtk75_ics/system/app/Launcher2.apk /system/app/Launcher2.apk
+
+
+adb pull /system/app/Launcher2.apk ./
+adb pull /system ./system
