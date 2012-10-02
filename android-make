@@ -1,6 +1,7 @@
 . build/envsetup.sh
 lunch full-eng
 emulator
+emulator -skin WVGA800
 
 make modules - shows a list of submodules that can be built (List of all LOCAL_MODULE definitions)
 make <local_module> - make a specific module (note that this is not the same as directory name. It is the LOCAL_MODULE definition in the Android.mk file)
