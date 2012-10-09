@@ -7,3 +7,5 @@ git rm -rf .
 git add -u
 
 git init --separate-git-dir ../.repositories/Launcher2.git
+
+git repack -adf
