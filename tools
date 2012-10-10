@@ -5,3 +5,8 @@ apt-get install wine
 
 apt-get install gimp
 apt-get install blender
+
+sudo apt-get install dconf-tools
+dconf-editor
+org -> gnome -> desktop -> interface
+gtk-color-scheme bg_color:#ebe0be;selected_bg_color:#737370;base_color:#9d906a
