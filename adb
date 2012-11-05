@@ -30,3 +30,5 @@ adb push out/target/product/mtk75_ics/system/app/Launcher2.apk /system/app/Launc
 
 adb pull /system/app/Launcher2.apk ./
 adb pull /system ./system
+
+adb shell cat /proc/kmsg > kmsg_a01.txt
