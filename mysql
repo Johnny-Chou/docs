@@ -1,2 +1,4 @@
 sudo apt-get install mysql-server
 sudo netstat -tap | grep mysql
+
+mysql_secure_installation
