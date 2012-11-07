@@ -1,0 +1,3 @@
+apt-get install mailutils
+default config (internet site...)
+echo testing | mail -s Bla pageask@gmail.com
