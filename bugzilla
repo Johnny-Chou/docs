@@ -1,0 +1,46 @@
+sudo su
+cd /var/www/
+cp /home/pageask/zip/bugzilla/bugzilla-4.2.3.tar.gz ./
+tar -xvf bugzilla-4.2.3.tar.gz
+cd bugzilla-4.2.3
+./checksetup.pl --check-modules
+/usr/bin/perl install-module.pl --all
+apt-get install libgd2-xpm-dev
+/usr/bin/perl install-module.pl GD
+apt-get install libapache2-mod-perl2
+apt-get install libapache2-mod-perl2-dev
+/usr/bin/perl install-module.pl Apache2::SizeLimit
+
+cd /etc/apache2/mods-enabled
+ln -s ../mods-available/headers.load headers.load
+ln -s ../mods-available/expires.load expires.load
+/etc/init.d/apache2 reload
+
+./checksetup.pl
+gedit ./localconfig &
+grep www-data /etc/passwd
+mysql_secure_installation
+gedit /etc/mysql/my.cnf &
+
+[mysqld]
+# Allow packets up to 4MB
+max_allowed_packet=4M
+# Allow small words in full-text indexes
+ft_min_word_len=2
+
+mysql> GRANT SELECT, INSERT,
+       UPDATE, DELETE, INDEX, ALTER, CREATE, LOCK TABLES,
+       CREATE TEMPORARY TABLES, DROP, REFERENCES ON bugs.*
+       TO bugs@localhost IDENTIFIED BY '$db_pass';
+mysql> FLUSH PRIVILEGES;
+
+./checksetup.pl
+
+show tables
+
+mysql> use $bugs_db
+mysql> ALTER TABLE attachments
+       AVG_ROW_LENGTH=1000000, MAX_ROWS=20000;
+
+gedit /etc/apache2/sites-available/default&
+
