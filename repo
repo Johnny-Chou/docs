@@ -28,3 +28,16 @@ git checkout refs/tags/android-4.1.1_r1
 cd ../..
 repo sync
 
+repo init -u ssh://192.168.1.158/home/pageask/repositories/alps/manifests.git -b gt-i9300-1023-75-s --repo-url=ssh://192.168.1.158/home/pageask/repositories/git-repo.git
+repo sync
+cp -r -n ~/zips/mtk/alps_1023/alps/* ./
+
+repo forall -c "git tag -a -m 'customer WU V001' 'WU-V001'"
+repo forall -c "git tag -l WU*"
+repo forall -c "git tag -l WU*" | wc -l
+grep project .repo/manifest.xml | wc -l
+repo forall -c "git push --tags sg"
+
+repo forall -c "git tag -a -m 'wu first version' GT-I9300-1023-75-S-WU-V001"
+repo forall -c "git tag -l 'GT-I9300-1023-75-S-WU-V001'" | wc -l
+grep project .repo/manifest.xml | wc -l
