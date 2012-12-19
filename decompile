@@ -1,0 +1,13 @@
+http://code.google.com/p/android-apktool/
+./apktool d geek.apk test
+
+http://code.google.com/p/smali/
+baksmali -a <api_level> -x <odex_file> -d <framework_dir> -o <out_dir>
+baksmali -a 15 -x MediaProvider.odex -d ~/projects/third-party/taidaxun/system/framework/ -o MediaProvider
+smali MediaProvider -o classes.dex
+
+http://code.google.com/p/dex2jar/
+d2j-dex2jar.sh classes.dex
+
+http://java.decompiler.free.fr/?q=jdgui
+jd-gui classes-dex2jar.jar
