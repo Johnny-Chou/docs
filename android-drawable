@@ -1,0 +1,91 @@
+## action bar
+ab_transparent_dark_holo.9.png
+cab_background_top_holo_dark.9.png
+ic_ab_back_holo_dark.png
+ic_menu_moreoverflow_normal_holo_dark.png
+
+## btn_check_off
+btn_check_off_disabled_focused_holo_dark.png
+btn_check_off_disabled_holo_dark.png
+btn_check_off_focused_holo_dark.png
+btn_check_off_holo_dark.png
+btn_check_off_pressed_holo_dark.png
+
+## btn_check_on
+btn_check_on_disabled_focused_holo_dark.png
+btn_check_on_disabled_holo_dark.png
+btn_check_on_focused_holo_dark.png
+btn_check_on_holo_dark.png
+btn_check_on_pressed_holo_dark.png
+
+## btn_radio_off
+btn_radio_off_disabled_focused_holo_dark.png
+btn_radio_off_disabled_holo_dark.png
+btn_radio_off_focused_holo_dark.png
+btn_radio_off_holo_dark.png
+btn_radio_off_pressed_holo_dark.png
+
+## btn_radio_on
+btn_radio_on_disabled_focused_holo_dark.png
+btn_radio_on_disabled_holo_dark.png
+btn_radio_on_focused_holo_dark.png
+btn_radio_on_holo_dark.png
+btn_radio_on_pressed_holo_dark.png
+
+## dialog
+dialog_bottom_holo_dark.9.png
+dialog_full_holo_dark.9.png
+dialog_middle_holo_dark.9.png
+dialog_top_holo_dark.9.png
+
+## textfield
+textfield_activated_holo_dark.9.png
+textfield_multiline_activated_holo_dark.9.png
+
+## pattern unlock
+btn_code_lock_default_holo.png
+btn_code_lock_touched_holo.png
+indicator_code_lock_drag_direction_red_up.png
+indicator_code_lock_point_area_default_holo.png
+indicator_code_lock_point_area_green_holo.png
+indicator_code_lock_point_area_red_holo.png
+
+background_holo_dark.png
+
+## global action dialog
+ic_lock_silent_mode_off.png
+ic_lock_silent_mode.png
+ic_lock_silent_mode_vibrate.png
+ic_lock_airplane_mode_off.png
+ic_lock_airplane_mode.png
+ic_lock_data_disable.png
+ic_lock_data_enable.png
+ic_lock_power_off.png
+ic_lock_restart.png
+
+## switch
+switch_activation_dim.png
+switch_activation.png
+switch_activation_press.png
+switch_bg_disabled_holo_dark.9.png
+switch_bg_focused_holo_dark.9.png
+switch_bg_holo_dark.9.png
+switch_disabled_dim.png
+switch_disabled.png
+switch_disabled_press.png
+switch_thumb_activated_holo_dark.9.png
+switch_thumb_disabled_holo_dark.9.png
+switch_thumb_holo_dark.9.png
+switch_thumb_pressed_holo_dark.9.png
+
+default_wallpaper.jpg
+
+## popup
+popup_bottom_bright.9.png
+popup_bottom_medium.9.png
+popup_center_dark.9.png
+popup_full_dark.9.png
+popup_top_dark.9.png
+
+list_selector_disabled_holo_dark.9.png
+menu_hardkey_panel_holo_light.9.png
