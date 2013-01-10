@@ -11,3 +11,13 @@ d2j-dex2jar.sh classes.dex
 
 http://java.decompiler.free.fr/?q=jdgui
 jd-gui classes-dex2jar.jar
+
+baksmali classes.dex
+smali out/
+
+apktool d antutu.apk
+apktool b antutu
+#antutu/dist/antutu.apk
+keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore my-release-key.keystore my_application.apk alias_name
+jarsigner -verify my_signed.apk
