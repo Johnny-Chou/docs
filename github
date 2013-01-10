@@ -1,0 +1,9 @@
+git config --global user.name "pageask"
+git config --global user.email "pageask@gmail.com"
+
+ssh-keygen -t rsa -C "pageask@gmail.com"
+
+copy .ssh/id_rsa.pub to github ssh keys
+test with this command
+
+ssh -T git@github.com
