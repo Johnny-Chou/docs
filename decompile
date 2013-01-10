@@ -21,3 +21,8 @@ apktool b antutu
 keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 jarsigner -verbose -sigalg MD5withRSA -digestalg SHA1 -keystore my-release-key.keystore my_application.apk alias_name
 jarsigner -verify my_signed.apk
+
+cd ~/projects/third-party/yiding-2/system/framework
+apktool if framework-res.apk yiding
+apktool if mediatek-res.apk yiding
+apktool d -f -t yiding Contacts.apk
