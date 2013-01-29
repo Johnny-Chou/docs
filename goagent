@@ -1,0 +1,23 @@
+download appengine
+https://developers.google.com/appengine/downloads
+download goagent
+https://github.com/goagent/goagent
+
+gedit goagent/server/python/app.yaml
+application: pageask
+
+python google_appengine/appcfg.py update goagent/server/python
+
+deployed at appegine adminconsole
+
+gedit goagent/local/proxy.ini
+appid = pageask
+
+sudo python goagent/local/proxy.py
+
+install chrome SwitchySharp
+config SwitchySharp
+import/export
+options
+recovery from file
+goagent/local/SwitchyOptions.bak
