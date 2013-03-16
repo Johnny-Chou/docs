@@ -1,3 +1,5 @@
+I'm Page Ask, I'm 26, I'm male
+
 The Past:
 =========
 
@@ -43,4 +45,5 @@ I'm reading and learning the Ruby code on github,
 such as grit, jakyll, rubygems.
 
 hope one day I will make contributions to these projects,
-also hope find a job about these things.
+also hope find a job about these things,
+the best is to become a GitHubber.
