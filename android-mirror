@@ -1,0 +1,4 @@
+repo url:
+http://android.googlesource.com/tools/repo
+
+repo init -u http://android.googlesource.com/mirror/manifest --mirror

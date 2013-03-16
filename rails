@@ -1,0 +1,29 @@
+*************
+*  Install  *
+*************
+gem query --local
+gem install --remote rails
+gem query --local
+rails --version
+rbenv rehash
+rails --version
+
+**************
+*  Commands  *
+**************
+rails new blog
+
+this command will generate a file named Gemfile,
+and will run bundle install. So a lot of other gems will be installed.
+
+rails new blog --skip-bundle
+
+rails new --help
+
+cd .. && rails new blog --database=mysql
+
+enable gem therubyracer in Gemfile
+bundle install
+rake db:create
+rake -T
+rails server

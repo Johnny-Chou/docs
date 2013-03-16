@@ -1,0 +1,66 @@
+sqlite3 ex1
+
+create table tbl1(one varchar(10), two smallint);
+insert into tbl1 values('hello!', 10);
+insert into tbl1 values('goodbye', 20);
+select * from tbl1;
+
+CREATE TABLE tbl2 (
+  f1 varchar(30) primary key,
+  f2 text,
+  f3 real
+);
+
+select * from sqlite_master;
+
+.help
+
+.mode list
+select * from tbl1;
+.separator ", "
+select * from tbl1;
+
+.mode line
+select * from tbl1;
+
+.mode column
+select * from tbl1;
+.width 12 6
+select * from tbl1;
+.header off
+select * from tbl1;
+
+.mode insert new_table
+select * from tbl1;
+
+.mode list
+.separator |
+.output test_file_1.txt
+select * from tbl1;
+.exit
+cat test_file_1.txt
+
+.tables
+
+.indices
+
+.schema
+.schema tbl2
+.schema %abc%
+
+.databases
+
+echo '.dump' | sqlite3 ex1 | gzip -c > ex1.dump.gz
+zcat ex1.dump.gz | sqlite3 ex2
+
+createdb ex2
+sqlite3 ex1 .dump | psql ex2
+
+.explain
+explain delete from tbl1 where two < 20;
+
+.timeout
+
+.exit
+
+sqlite3 ex1 'select * from tbl1' | awk '{printf "<tr><td>%s<td>%s\n",$1,$2}'

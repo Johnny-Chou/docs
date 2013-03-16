@@ -1,0 +1,25 @@
+sudo apt-get install \
+zlib1g-dev \
+libsqlite3-dev \
+sqlite3 \
+libqt4-opengl \
+libsdl1.2debian
+
+****************************************
+dpkg --list zlib1g-dev
+sudo apt-get install zlib1g-dev
+dpkg --list zlib1g-dev
+dpkg --status zlib1g-dev
+dpkg --listfiles zlib1g-dev
+
+dpkg --list libsqlite3-dev
+sudo apt-get install libsqlite3-dev
+dpkg --list libsqlite3-dev
+dpkg --status libsqlite3-dev
+dpkg --listfiles libsqlite3-dev
+
+dpkg --list sqlite3
+sudo apt-get install sqlite3
+dpkg --list sqlite3
+dpkg --status sqlite3
+dpkg --listfiles sqlite3

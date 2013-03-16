@@ -1,0 +1,37 @@
+gem query --remote
+Error: about zlib
+**********************************
+rbenv versions
+rbenv uninstall 1.9.3-p374
+rbenv versions
+dpkg -l zlib1g-dev
+sudo apt-get install zlib1g-dev
+dpkg -l zlib1g-dev
+rbenv install 1.9.3-p374
+rbenv versions
+gem query --remote
+gem q -r
+**********************************
+
+gem query --remote --name-matches doom
+gem q -r -n doom
+
+gem install --remote progressbar
+gem i -r progressbar
+gem ins -r progressbar-0.0.3
+gem ins -r progressbar --version '> 0.0.1'
+
+gem specification  progressbar
+gem spec progressbar
+
+gem uninstall progressbar
+
+gem query --local
+gem q -l
+
+gem server
+http://localhost:8808
+
+echo 'gem: --rdoc --test' >> ~/.gemrc
+http://docs.rubygems.org/read/chapter/11
+

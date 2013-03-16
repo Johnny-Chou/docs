@@ -1,0 +1,80 @@
+******************************************************************
+*  http://linuxprograms.wordpress.com/2010/05/14/dpkg-tutorial/  *
+******************************************************************
+
+dpkg --list
+First character:
+*************************************
+signifies the desired state
+u: Unknown (an unknown state)
+i: Install (marked for installation)
+r: Remove (marked for removal)
+p: Purge (marked for purging)
+h: Hold
+
+Second Character:
+signifies the current state
+n: Not- The package is not installed
+i: Inst – The package is successfully installed
+c: Cfg-files – Configuration files are present
+u: Unpacked- The package is stilled unpacked
+f: Failed-cfg- Failed to remove configuration files
+h: Half-inst- The package is only partially installed
+W: trig-aWait
+t: Trig-pend
+
+Third Character:
+This corresponds to the error state
+R: Reinst-required The package must be installed
+*************************************
+
+dpkg --list | grep "^ii"
+
+dpkg --list | grep "^rc"
+dpkg --list | grep "^rc" | cut -d " " -f 3
+dpkg --list | grep "^rc" | cut -d " " -f 3 | xargs sudo dpkg --purge
+
+dpkg --list emacs
+dpkg-query --status emacs
+dpkg --list zlib1g-dev
+dpkg-query --status zlib1g-dev
+
+clone a ubuntu:
+dpkg --get-selections | tee packages_list
+sudo dpkg --set-selections < ./packages_list
+sudo apt-get -u dselect-upgrade
+
+*********************************************************************************
+*  http://www.aboutlinux.info/2005/12/concise-apt-get-dpkg-primer-for-new.html  *
+*********************************************************************************
+Let's say you want to install Gedit text editor in Debian
+and you have downloaded its deb package from the Gedit website.
+The package is named gedit-2.12.1.deb.
+To install it in Debian,
+open a terminal and move to the directory containing the deb file and execute the command :
+
+dpkg [-i | --install] <package-name>
+sudo dpkg -i gedit-2.12.1.deb
+Error: dependency
+sudo apt-get -f install
+
+Will remove the program but leave its configuration files intact
+dpkg [-r | --remove] <program name>
+dpkg -r gedit
+
+Will completely remove the package including the configuration files
+dpkg [-P | --purge] <program name>
+dpkg -P gedit
+
+To see the contents of a deb package
+dpkg [-c | --contents] gedit-2.12.1.deb
+
+To get more information about a deb package
+dpkg [-I | --info] gedit-2.12.1.deb
+
+To check if a program is installed
+dpkg [-s | --status] gedit
+
+To know where all the files associated with a program are installed
+dpkg [-L | --listfiles] gedit
+

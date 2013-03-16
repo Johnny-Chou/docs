@@ -1,0 +1,52 @@
+*********************************************************************************
+*  http://www.aboutlinux.info/2005/12/concise-apt-get-dpkg-primer-for-new.html  *
+*********************************************************************************
+
+Unlike dpkg, apt-get does not understand .deb files,
+it works with the packages proper name and can only install .deb archives from a source specified in '/etc/apt/sources.list'. 
+
+apt-get will call dpkg directly after downloading the .deb archives from the configured sources.
+
+To update the list of packages known by your system, do the following :
+apt-get update
+
+To upgrade all the installed packages on your system:
+apt-get upgrade
+
+To install the gedit package and all its dependencies:
+apt-get install gedit
+
+To remove the gedit package from your system:
+apt-get remove gedit
+
+To remove gedit and also its configuration files:
+apt-get --purge remove gedit
+
+Upgrading Debian to a new version can be done with the command:
+apt-get dist-upgrade
+
+Each time you install an application using apt-get,
+the corresponding deb package is downloaded and stored in a location on your hard disk,
+usually in the directory '/var/cache/apt/archives/'.
+
+The following command will remove all the archives and free up hard disk space:
+apt-get clean
+
+To delete only those packages in the cache which are found useless or partially complete, do:
+apt-get autoclean
+
+To find all packages that contain the word "editor", do the following:
+apt-cache search editor
+
+To print detailed information about a package, the syntax is:
+apt-cache show <package name>
+
+To print the packages that a given package depends on, the syntax is:
+apt-cache depends <package name>
+
+To print detailed information of the versions available for a package and the packages that reverse-depends on it:
+apt-cache showpkg <package name>
+
+To get statistics of the packages available in the repositories:
+apt-cache stats
+

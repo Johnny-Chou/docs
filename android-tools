@@ -1,0 +1,41 @@
+sudo apt-get install ia32-libs libgl1-mesa-dev
+*********************************************************
+android sdk
+*********************************************************
+create avd:
+
+android avd
+
+or
+
+android list targets
+android create avd --name test_avd4.2 --target 14 --abi armeabi-v7a
+
+emulator -avd test_avd4.2
+
+android --help create avd
+ls ~/.android/avd/
+*********************************************************
+create project:
+
+android create project \
+--name TestAndroid \
+--target 14 \
+--path ./TestAndroidProject \
+--package org.pageask.android \
+--activity TestAndroidActivity
+
+cd TestAndroidProject
+
+echo 'local.properties' >> .gitignore
+echo 'bin/' >> .gitignore
+echo 'gen/' >> .gitignore
+
+git init
+*********************************************************
+ant debug
+
+adb devices
+
+adb install bin/TestAndroid-debug.apk
+adb -s emulator-5554 install bin/TestAndroid-debug.apk

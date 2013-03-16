@@ -1,0 +1,26 @@
+*************
+*  Install  *
+*************
+sudo apt-get install build-essential libssl-dev zlib1g-dev libreadline-dev
+dpkg --list build-essential
+
+git clone git://github.com/sstephenson/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL -l
+mkdir -p ~/.rbenv/plugins
+git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+rbenv install 1.9.3-p374
+rbenv rehash
+rbenv global 1.9.3-p374
+irb
+***************
+*  Reinstall  *
+***************
+rbenv uninstall 1.9.3-p374
+y
+rbenv versions
+gem query --local
+rbenv install 1.9.3-p374
+rbenv versions
+gem query --local
