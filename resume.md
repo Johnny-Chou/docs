@@ -1,18 +1,20 @@
-I'm Page Ask, I'm 26, I'm male
+I'm Page, I'm 26.
+=================
 
 The Past:
-=========
+---------
 
 I had been working on mobile phone software for about three years.
 
 In the first two years,
 I was a C programmer writting applications for MTK feature phone platforms.
-In this period I was every productive,
-I wrote lock screen, idle screen, privacy protection, a animation framework and so on.
+At that time I was every productive,
+I wrote code for lock screen, idle screen, main menu,
+privacy protection, an animation framework, blow microphone applications and so on.
 
-In the last one year,
+In the past year,
 I was a Java programmer wrtting applications for Android smart phones.
-I was also a manager using git to manage our source code.
+I was also a manager using git, gerrit, jenkins to manage our source code.
 
 In the first half year, I worked on the QRD platforms.
 I wrote lock screen and architected our company's development work flow.
@@ -34,9 +36,9 @@ In the second half year, I worked on the MTK platforms.
 I developed lock screen, Launcher, Phone, Contacts, SMS, frameworks.
 
 Now:
-====
+----
 
-I quit my job and want start a chapter of my life.
+I quit my job and want start a new chapter of my life.
 
 I'm interesting in Ruby, Python, git.
 I think github will be the next.
@@ -45,5 +47,4 @@ I'm reading and learning the Ruby code on github,
 such as grit, jakyll, rubygems.
 
 hope one day I will make contributions to these projects,
-also hope find a job about these things,
-the best is to become a GitHubber.
+also hope find a job about these things.
