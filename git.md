@@ -39,3 +39,8 @@ Config git:
     git config --global color.ui true
     git config --global core.editor emacs
     git config --global --unset core.editor
+
+Show cached files:
+==================
+
+    git ls-files
